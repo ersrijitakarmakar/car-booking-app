@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- {% if msg %}
+        <p>{{msg}}</p>
+    {% endif %} -->
+
+    {% if error %}
+    <p style="color:red;">{{ error }}</p>
+{% endif %}
+
+{% if success %}
+    <p style="color:green;">{{ success }}</p>
+{% endif %}
+
+
+
+    <form action="/dashboard" method="POST">
+        <input type="text" placeholder="Brand Name" name="brand"><br><br>
+        <input type="text" placeholder="Model Name" name="model"><br><br>
+        <input type="text" placeholder="color" name="color"><br><br>
+        <button>submit</button><br><br>
+    </form>
+    <p><a href="/">Back to Home</a></p>
+</body>
+</html>
