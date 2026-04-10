@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--Bootstrap CDN-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<body>
+    <!--Login for Admins (Only for Admin not for Users)-->
+    <div class="container p-4">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <div class="card shadow p-4">
+
+                    <h3 class="text-center mb-2 fw-bold">Login</h3>
+
+                    <form action="/login" method="POST">
+
+                        <div class="mb-2">
+                            <label class="form-label fs-6 fw-semibold">User ID or Email</label>
+                            <input type="text" class="form-control" name="user" placeholder="User ID or Email Address">
+                        </div>
+
+                        <div class="mb-2">
+                            <label class="form-label fs-6 fw-semibold">Password</label>
+                            <input type="password" class="form-control" name="password" placeholder="Password">
+                        </div>
+
+                        <div class="mb-2 text-center">
+                            <label for="" class="form-label fs-6 fw-semibold">Save Id</label>
+                            <input class="ms-2" type="checkbox" name="remember_me">
+                        </div>
+                       
+
+                        <button type="submit" class="btn btn-primary w-100 mb-2 fw-bold">
+                            Submit
+                        </button>
+
+                        <div class="text-center">
+                            <a href="/register" class="fs-6">Don't have any account? Register now</a>
+                        </div>
+
+                        <div class="text-center">
+                            <a href="/" class="fs-6 text-decoration-none btn btn-success mt-2">Back to Home</a>
+                        </div>
+                        
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Error and Sucessfull Massage-->
+    {% if error %}
+    <p class="text-center" style="color:red;">{{ error }}</p>
+    {% endif %}
+
+    {% if login_success %}
+    <p class="text-center" style="color:green;">{{ login_success }}</p>
+    {% endif %}
+
+
+</body>
+</html>
